@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Saúde Center</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para o formulário e a mensagem */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 20px;
+        }
+        #message {
+            display: none; /* Inicialmente oculta */
+            color: green;
+            margin-top: 10px;
+        }
+        #error {
+            display: none; /* Inicialmente oculta */
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Alfa Saúde Center</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Agendamento</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="emergency-button">Emergência</a>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Cuidando da sua saúde com excelência</h1>
+            <div class="cta-buttons">
+                <a href="#" class="cta" id="scheduleLink">Agende uma Consulta</a>
+                <a href="#" class="cta">Saiba Mais</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service">
+                <h3>Consultas</h3>
+                <p>Agende uma consulta com nossos especialistas.</p>
+                <a href="#" class="service-link" id="scheduleLink">Agende uma Consulta</a>
+            </div>
+            <div class="service">
+                <h3>Exames</h3>
+                <p>Realizamos diversos exames para sua saúde.</p>
+                <a href="#" class="service-link">Saiba mais</a>
+            </div>
+            <div class="service">
+                <h3>Urgência</h3>
+                <p>Atendimento 24 horas para emergências.</p>
+                <a href="#" class="service-link">Saiba mais</a>
+            </div>
+        </section>
+
+        <section class="appointment" id="appointment">
+            <h2>Agende sua Consulta</h2>
+            <form id="myForm">
+                <input type="text" placeholder="Nome" id="name" required>
+                <input type="date" id="date" required>
+                <input type="time" required>
+                <select required>
+                    <option value="">Selecione o tipo de consulta</option>
+                    <option value="consulta1">Consulta 1</option>
+                    <option value="consulta2">Consulta 2</option>
+                </select>
+                <button type="submit" class="submit-button">Enviar</button>
+            </form>
+            <div id="message"></div> <!-- Div para a mensagem de sucesso -->
+            <div id="error"></div> <!-- Div para a mensagem de erro -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Contato: (XX) XXXX-XXXX | Endereço: Rua Exemplo, 123</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById("scheduleLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Impede o comportamento padrão do link
+    document.getElementById("appointment").scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção
+});
+// Adiciona um ouvinte de evento ao formulário
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    var messageDiv = document.getElementById("message");
+    var errorDiv = document.getElementById("error");
+    messageDiv.style.display = "none"; // Oculta mensagem de sucesso
+    errorDiv.style.display = "none"; // Oculta mensagem de erro
+
+    var dateInput = document.getElementById("date").value;
+    var selectedDate = new Date(dateInput);
+    var currentDate = new Date();
+    var year = selectedDate.getFullYear();
+    var month = selectedDate.getMonth(); // Janeiro é 0
+    var day = selectedDate.getDate();
+
+    // Verifica se o ano está fora do intervalo permitido
+    if (year < 2024 || year > 2025) {
+        errorDiv.textContent = "Por favor, selecione uma data entre 2024 e 2025.";
+        errorDiv.style.display = "block";
+        return;
+    }
+
+    // Verifica se a data é válida
+    if (month > 11 || (month === 11 && day > 30) || (month === 1 && day > 28 && !isLeapYear(year))) {
+        errorDiv.textContent = "Data inválida. Verifique o dia e o mês.";
+        errorDiv.style.display = "block";
+        return;
+    }
+
+    // Exibe a mensagem de agendamento concluído
+    messageDiv.textContent = "Agendamento concluído"; // Define o texto da mensagem
+    messageDiv.style.display = "block"; // Torna a mensagem visível
+
+    // Remove a mensagem após 3 segundos
+    setTimeout(function() {
+        messageDiv.style.display = "none"; // Oculta a mensagem
+    }, 3000); // 3000 milissegundos = 3 segundos
+});
+
+// Função para verificar se um ano é bissexto
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+    </script>
+
+</body>
+</html>
