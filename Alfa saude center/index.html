@@ -5,45 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfa Saúde Center</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Estilos para o formulário e a mensagem */
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 20px;
-        }
-        #message {
-            display: none; /* Inicialmente oculta */
-            color: green;
-            margin-top: 10px;
-        }
-        #error {
-            display: none; /* Inicialmente oculta */
-            color: red;
-            margin-top: 10px;
-        }
-    </style>
+
 </head>
 <body>
     <header>
         <div class="logo">Alfa Saúde Center</div>
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre Nós</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Agendamento</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="#"onclick="error()">Início</a></li>
+                <li><a href="#"onclick="error()">Sobre Nós</a></li>
+                <li><a href="#"onclick="error()">Serviços</a></li>
+                <li><a href="#"onclick="error()">Agendamento</a></li>
+                <li><a href="#"onclick="error()">Contato</a></li>
             </ul>
         </nav>
-        <a href="#" class="emergency-button">Emergência</a>
+        <a href="#" onclick="error()" class="emergency-button">Emergência</a>
     </header>
 
     <main>
         <section class="banner">
             <h1>Cuidando da sua saúde com excelência</h1>
             <div class="cta-buttons">
-                <a href="#" class="cta" id="scheduleLink">Agende uma Consulta</a>
-                <a href="#" class="cta">Saiba Mais</a>
+                <a href="#" class="cta" class="service-link" id="service-link">Agende uma Consulta</a>
+                <a href="#" class="cta" onclick="error()">Saiba Mais</a>
             </div>
         </section>
 
@@ -52,44 +36,45 @@
             <div class="service">
                 <h3>Consultas</h3>
                 <p>Agende uma consulta com nossos especialistas.</p>
-                <a href="#" class="service-link" id="scheduleLink">Agende uma Consulta</a>
+                <a href="#" class="service-link" id="service-link">Agende uma Consulta</a>
             </div>
             <div class="service">
                 <h3>Exames</h3>
                 <p>Realizamos diversos exames para sua saúde.</p>
-                <a href="#" class="service-link">Saiba mais</a>
+                <a href="#" class="service-link" id="service-link">Saiba mais</a>
             </div>
             <div class="service">
                 <h3>Urgência</h3>
                 <p>Atendimento 24 horas para emergências.</p>
-                <a href="#" class="service-link">Saiba mais</a>
+                <a href="#" class="service-link" id="service-link">Saiba mais</a>
             </div>
         </section>
 
         <section class="appointment" id="appointment">
-            <h2>Agende sua Consulta</h2>
+            <h2 id="schedule">Agende sua Consulta</h2>
             <form id="myForm">
                 <input type="text" placeholder="Nome" id="name" required>
                 <input type="date" id="date" required>
                 <input type="time" required>
                 <select required>
                     <option value="">Selecione o tipo de consulta</option>
-                    <option value="consulta1">Consulta 1</option>
-                    <option value="consulta2">Consulta 2</option>
+                    <option value="consulta1">Consulta</option>
+                    <option value="consulta2">Exames</option>
+                    <option value="consulta2">Urgência</option>
                 </select>
                 <button type="submit" class="submit-button">Enviar</button>
             </form>
-            <div id="message"></div> <!-- Div para a mensagem de sucesso -->
-            <div id="error"></div> <!-- Div para a mensagem de erro -->
+            <div id="message"></div> 
+            <div id="error"></div> 
         </section>
     </main>
 
     <footer>
         <p>Contato: (XX) XXXX-XXXX | Endereço: Rua Exemplo, 123</p>
         <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
+            <a href="#"onclick="error()">Facebook</a>
+            <a href="#"onclick="error()">Instagram</a>
+            <a href="#"onclick="error()">Twitter</a>
         </div>
     </footer>
 

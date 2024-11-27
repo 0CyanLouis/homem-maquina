@@ -1,8 +1,3 @@
-
-        document.getElementById("scheduleLink").addEventListener("click", function(event) {
-    event.preventDefault(); // Impede o comportamento padrão do link
-    document.getElementById("appointment").scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a seção
-});
 // Adiciona um ouvinte de evento ao formulário
 document.getElementById("myForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Impede o envio do formulário
@@ -47,4 +42,34 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
+function error() {
+    alert('função não está disponivel');
+}
+
+
+  
+    const scheduleButton = document.getElementById("schedule");
+    const appointmentSection = document.getElementById("appointment");
+
+
+    function highlightButton() {
+        scheduleButton.style.backgroundColor = "lightblue";
+        setTimeout(() => {
+            scheduleButton.style.backgroundColor = "";
+        }, 1000);
+    }
+
+    function scrollToAppointment() {
+        appointmentSection.scrollIntoView({ behavior: "smooth" });
+    }
+    document.querySelectorAll('#service-link').forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); 
+            highlightButton(); 
+            scrollToAppointment(); 
+        });
+    });
+
+
+
   
