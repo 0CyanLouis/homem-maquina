@@ -13,7 +13,6 @@
             color: red;
             margin-top: 10px;
         }
-
 header {
     background-color: #c8102e;
     color: white;
@@ -22,34 +21,28 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
 header .logo {
     font-size: 24px;
     font-weight: bold;
 }
-
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
-
 nav a {
     color: white;
     text-decoration: none;
 }
-
 a {
     color: #007bff; /* Cor do texto padrão */
     text-decoration: none; /* Remove o sublinhado padrão */
     transition: color 0.3s ease; /* Transição suave para a mudança de cor */
 }
-
 a:hover {
     color: #0056b3; /* Cor do texto ao passar o mouse */
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse (opcional) */
 }
-
 .emergency-button {
     background-color: #ff0000;
     padding: 10px 15px;
@@ -57,7 +50,6 @@ a:hover {
     text-decoration: none;
     border-radius: 5px;
 }
-
 .banner {
     background-image: url('assets/medica.avif');
     background-size: cover; /* Cobre toda a área */
@@ -69,11 +61,9 @@ a:hover {
     min-height: 400px; /* Altura mínima */
     min-width: 700px;
 }
-
 .cta-buttons {
     margin-top: 20px;
 }
-
 .cta {
     background-color: #ff0000; /* Cor de fundo */
     padding: 10px 15px; /* Espaçamento interno */
@@ -82,51 +72,40 @@ a:hover {
     border-radius: 5px; /* Bordas arredondadas */
     transition: background-color 0.3s ease; /* Transição suave */
 }
-
 .cta:hover {
     background-color: #a60a2c; /* Cor de fundo ao passar o mouse */
 }
-
 .services {
     padding: 20px;
     background-color: white;
 }
-
 .service {
     border: 1px solid #c8102e;
     border-radius: 5px;
     padding: 15px;
     margin: 10px 0;
 }
-
 .service h3 {
     color: #c8102e;
 }
-
 .service-link {
     color: #c8102e;
     text-decoration: none;
 }
-
-
-
 .appointment {
     padding: 20px;
     background-color: white;
 }
-
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-
 input, select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 .submit-button {
     background-color: #c8102e;
     color: white;
@@ -135,24 +114,20 @@ input, select {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .submit-button:hover {
     background-color: #a60a2c;
 }
-
 footer {
     background-color: #c8102e;
     color: white;
     text-align: center;
     padding: 15px;
 }
-
 .social-links a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-
 .social-links a:hover {
     text-decoration: underline;
 }

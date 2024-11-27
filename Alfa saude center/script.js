@@ -3,15 +3,23 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Impede o envio do formulário
 
     var messageDiv = document.getElementById("message");
+    
     var errorDiv = document.getElementById("error");
+
     messageDiv.style.display = "none"; // Oculta mensagem de sucesso
+
     errorDiv.style.display = "none"; // Oculta mensagem de erro
 
     var dateInput = document.getElementById("date").value;
+
     var selectedDate = new Date(dateInput);
+
     var currentDate = new Date();
+
     var year = selectedDate.getFullYear();
+
     var month = selectedDate.getMonth(); // Janeiro é 0
+
     var day = selectedDate.getDate();
 
     // Verifica se o ano está fora do intervalo permitido
@@ -38,12 +46,15 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     }, 3000); // 3000 milissegundos = 3 segundos
 });
 
+
+
 // Função para verificar se um ano é bissexto
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
+
 function error() {
-    alert('função não está disponivel');
+    alert('Função não está disponível');
 }
 
 
@@ -59,13 +70,19 @@ function error() {
         }, 1000);
     }
 
+
     function scrollToAppointment() {
         appointmentSection.scrollIntoView({ behavior: "smooth" });
     }
+
+
     document.querySelectorAll('#service-link').forEach(link => {
         link.addEventListener('click', (event) => {
+
             event.preventDefault(); 
+
             highlightButton(); 
+
             scrollToAppointment(); 
         });
     });
